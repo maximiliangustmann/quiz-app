@@ -6,4 +6,11 @@ body {
   margin: 0;
   font-size: 112.5%;
   font-family: sans-serif;
+  display: grid;
+  grid-template-rows: 48px auto 48px;
+}
+
+main {
+  overflow: auto;
+  height: 100vh;
 }
