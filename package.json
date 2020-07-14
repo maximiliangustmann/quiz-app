@@ -1,0 +1,22 @@
+{
+  "name": "quiz-app",
+  "version": "1.0.0",
+  "description": "A simple app with questions and answers",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maximiliangustmann/quiz-app.git"
+  },
+  "author": "Maximilian Gustmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maximiliangustmann/quiz-app/issues"
+  },
+  "homepage": "https://github.com/maximiliangustmann/quiz-app#readme",
+  "dependencies": {
+    "serve": "^11.3.2"
+  }
+}
