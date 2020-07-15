@@ -1,4 +1,10 @@
 header {
-  border: solid black 2px;
+  border: solid black 1px;
   text-align: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 100;
+  background-color: white;
 }

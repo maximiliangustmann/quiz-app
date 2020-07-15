@@ -3,14 +3,9 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-size: 112.5%;
   font-family: sans-serif;
   display: grid;
-  grid-template-rows: auto auto auto;
-}
-
-main {
-  overflow: auto;
-  height: 100vh;
+  grid-template-rows: 60px auto auto;
 }
