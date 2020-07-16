@@ -4,7 +4,7 @@
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
 <g>
 	<g>
-		<polygon points="106,0 106,512 256,366.211 406,512 406,0 		"/>
+		<path d="M106,0v512l150-145.099L406,512V0H106z M376,441.543L256,325.099L136,441.543V30h240V441.543z"/>
 	</g>
 </g>
 <g>
