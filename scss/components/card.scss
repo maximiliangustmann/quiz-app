@@ -1,27 +1,30 @@
 .card {
   border: solid black 2px;
   position: relative;
-  top: 120px;
+}
 
-  &__bookmark {
-    position: absolute;
-    top: -20px;
-    right: 0;
-    background-color: white;
+.card__bookmark {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  background-color: white;
 
-    width: 48px;
-    height: 48px;
-  }
+  width: 48px;
+  height: 48px;
+}
 
-  &__taglist {
-    display: flex;
-    list-style-type: none;
-    justify-content: space-evenly;
-  }
+.card__taglist {
+  display: flex;
+  list-style-type: none;
+  justify-content: space-evenly;
+}
 
-  &__tag {
-    border: solid 1px black;
-  }
+.card__tag {
+  border: solid 1px black;
+}
+
+.card__button {
+  position: center;
 }
 
 .card__bookmark--active {
