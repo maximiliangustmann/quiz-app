@@ -9,6 +9,11 @@ var buttonBookmarks = document.querySelector('.button__bookmarks');
 var buttonCreate = document.querySelector('.button__create');
 var buttonProfile = document.querySelector('.button__profile');
 var headline = document.querySelector('h1');
+var cardBookmark = document.querySelector('.card__bookmark');
+var cardBookmark1 = document.querySelector('.card__bookmark--1');
+var cardBookmark2 = document.querySelector('.card__bookmark--2');
+var cardBookmark3 = document.querySelector('.card__bookmark--3');
+var cardBookmark4 = document.querySelector('.card__bookmark--4');
 buttonIndex.addEventListener('click', function () {
   bookmarks.classList.add('hide');
   create.classList.add('hide');
@@ -36,4 +41,16 @@ buttonProfile.addEventListener('click', function () {
   index.classList.add('hide');
   profile.classList.remove('hide');
   headline.textContent = 'Profile';
+});
+cardBookmark1.addEventListener('click', function () {
+  cardBookmark1.classList.toggle('card__bookmark--active');
+});
+cardBookmark2.addEventListener('click', function () {
+  cardBookmark2.classList.toggle('card__bookmark--active');
+});
+cardBookmark3.addEventListener('click', function () {
+  cardBookmark3.classList.toggle('card__bookmark--active');
+});
+cardBookmark4.addEventListener('click', function () {
+  cardBookmark4.classList.toggle('card__bookmark--active');
 });

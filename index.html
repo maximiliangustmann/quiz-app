@@ -10,7 +10,7 @@
 
   <body>
     <header>
-      <h1></h1>
+      <h1>Home</h1>
     </header>
 
     <main class="index">
@@ -18,7 +18,7 @@
         <input
           type="image"
           src="images/bookmark.svg"
-          class="card__bookmark card__bookmark--active"
+          class="card__bookmark card__bookmark--1"
         />
         <h2 class="card__headline">Question</h2>
         <p class="card__text card__text--question">
@@ -40,7 +40,7 @@
         <input
           type="image"
           src="images/bookmark.svg"
-          class="card__bookmark card__bookmark--active"
+          class="card__bookmark card__bookmark--2"
         />
         <h2 class="card__headline">Question</h2>
         <p class="card__text card__text--question">
@@ -59,12 +59,12 @@
       </section>
     </main>
 
-    <main class="bookmarks">
+    <main class="bookmarks hide">
       <section class="card m-20 p-20">
         <input
           type="image"
           src="images/bookmark.svg"
-          class="card__bookmark card__bookmark--active"
+          class="card__bookmark card__bookmark--3"
         />
         <h2 class="card__headline">Question</h2>
         <p class="card__text card__text--question">
@@ -86,7 +86,7 @@
         <input
           type="image"
           src="images/bookmark.svg"
-          class="card__bookmark card__bookmark--active"
+          class="card__bookmark card__bookmark--4"
         />
         <h2 class="card__headline">Question</h2>
         <p class="card__text card__text--question">
@@ -105,33 +105,27 @@
       </section>
     </main>
 
-    <main class="create">
-      <form action="">
-        <label for="question"> Add question </label>
-        <input type="text" id="question" />
+    <main class="create hide">
+      <form class="form" action="">
+        <label>
+          Add question
+          <input type="text" />
+        </label>
 
-        <h2>
-          Add anwser
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus
-          tempore voluptates facere natus quaerat ex assumenda iure quibusdam
-          vel architecto, quo dolor odio iusto illo at magni voluptas!
-          Reprehenderit, at.
-        </p>
-        <h2>Add tags</h2>
-        <p>divided by commas</p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-          voluptas quis ullam maiores explicabo porro minima voluptatum
-          excepturi quos perferendis magnam nulla sunt, obcaecati ipsum
-          voluptates delectus dicta nesciunt consequuntur.
-        </p>
-        <p>submit</p>
+        <label>
+          Add awnser
+          <input type="text" />
+        </label>
+
+        <label>
+          Add Tags
+          <input type="text" />
+        </label>
+        <button>submit</button>
       </form>
     </main>
 
-    <main class="profile">
+    <main class="profile hide">
       <img src="" alt="" />
       <h2>Name</h2>
       <p>
