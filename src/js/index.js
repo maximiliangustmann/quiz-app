@@ -12,6 +12,9 @@ const cardBookmark1 = document.querySelector('.card__bookmark--1')
 const cardBookmark2 = document.querySelector('.card__bookmark--2')
 const cardBookmark3 = document.querySelector('.card__bookmark--3')
 const cardBookmark4 = document.querySelector('.card__bookmark--4')
+const cardButton = document.querySelector('.card__button')
+const cardButton1 = document.querySelector('.card__button--1')
+const cardAnswer1 = document.querySelector('.card__answer--1')
 
 buttonIndex.addEventListener('click', () => {
   bookmarks.classList.add('hide')
@@ -59,4 +62,8 @@ cardBookmark3.addEventListener('click', () => {
 
 cardBookmark4.addEventListener('click', () => {
   cardBookmark4.classList.toggle('card__bookmark--active')
+})
+
+cardButton1.addEventListener('click', () => {
+  cardAnswer1.classList.toggle('hide')
 })

@@ -14,6 +14,9 @@ var cardBookmark1 = document.querySelector('.card__bookmark--1');
 var cardBookmark2 = document.querySelector('.card__bookmark--2');
 var cardBookmark3 = document.querySelector('.card__bookmark--3');
 var cardBookmark4 = document.querySelector('.card__bookmark--4');
+var cardButton = document.querySelector('.card__button');
+var cardButton1 = document.querySelector('.card__button--1');
+var cardAnswer1 = document.querySelector('.card__answer--1');
 buttonIndex.addEventListener('click', function () {
   bookmarks.classList.add('hide');
   create.classList.add('hide');
@@ -53,4 +56,7 @@ cardBookmark3.addEventListener('click', function () {
 });
 cardBookmark4.addEventListener('click', function () {
   cardBookmark4.classList.toggle('card__bookmark--active');
+});
+cardButton1.addEventListener('click', function () {
+  cardAnswer1.classList.toggle('hide');
 });
