@@ -59,4 +59,8 @@ cardBookmark4.addEventListener('click', function () {
 });
 cardButton1.addEventListener('click', function () {
   cardAnswer1.classList.toggle('hide');
+
+  if (cardButton1.textContent === 'Show answer') {
+    cardButton1.textContent = 'Hide Answer';
+  } else cardButton1.textContent = 'Show answer';
 });
