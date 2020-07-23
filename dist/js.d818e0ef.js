@@ -117,9 +117,62 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/js/index.js":[function(require,module,exports) {
+})({"src/js/nav.js":[function(require,module,exports) {
+"use strict";
 
-},{}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = navigation;
+
+function navigation() {
+  var index = document.querySelector('.index');
+  var bookmarks = document.querySelector('.bookmarks');
+  var create = document.querySelector('.create');
+  var profile = document.querySelector('.profile');
+  var buttonIndex = document.querySelector('.button__index');
+  var buttonBookmarks = document.querySelector('.button__bookmarks');
+  var buttonCreate = document.querySelector('.button__create');
+  var buttonProfile = document.querySelector('.button__profile');
+  var headline = document.querySelector('h1');
+  buttonIndex.addEventListener('click', function () {
+    bookmarks.classList.add('hide');
+    create.classList.add('hide');
+    profile.classList.add('hide');
+    index.classList.remove('hide');
+    headline.textContent = 'Home';
+  });
+  buttonBookmarks.addEventListener('click', function () {
+    index.classList.add('hide');
+    create.classList.add('hide');
+    profile.classList.add('hide');
+    bookmarks.classList.remove('hide');
+    headline.textContent = 'Bookmarks';
+  });
+  buttonCreate.addEventListener('click', function () {
+    bookmarks.classList.add('hide');
+    index.classList.add('hide');
+    profile.classList.add('hide');
+    create.classList.remove('hide');
+    headline.textContent = 'Create';
+  });
+  buttonProfile.addEventListener('click', function () {
+    bookmarks.classList.add('hide');
+    create.classList.add('hide');
+    index.classList.add('hide');
+    profile.classList.remove('hide');
+    headline.textContent = 'Profile';
+  });
+}
+},{}],"src/js/index.js":[function(require,module,exports) {
+"use strict";
+
+var _nav = _interopRequireDefault(require("./nav"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _nav.default)();
+},{"./nav":"src/js/nav.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
