@@ -17,6 +17,7 @@ var cardBookmark4 = document.querySelector('.card__bookmark--4');
 var cardButton = document.querySelector('.card__button');
 var cardButton1 = document.querySelector('.card__button--1');
 var cardAnswer1 = document.querySelector('.card__answer--1');
+var buttonSubmit = document.querySelector('.button__submit');
 buttonIndex.addEventListener('click', function () {
   bookmarks.classList.add('hide');
   create.classList.add('hide');

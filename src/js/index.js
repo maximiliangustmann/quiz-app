@@ -15,7 +15,7 @@ const cardBookmark4 = document.querySelector('.card__bookmark--4')
 const cardButton = document.querySelector('.card__button')
 const cardButton1 = document.querySelector('.card__button--1')
 const cardAnswer1 = document.querySelector('.card__answer--1')
-
+const buttonSubmit = document.querySelector('.button__submit')
 buttonIndex.addEventListener('click', () => {
   bookmarks.classList.add('hide')
   create.classList.add('hide')
