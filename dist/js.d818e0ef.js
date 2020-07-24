@@ -127,11 +127,13 @@ exports.get = get;
 exports.getAll = getAll;
 
 function get(selector) {
-  return document.querySelector(selector);
+  var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+  return target.querySelector(selector);
 }
 
 function getAll(selector) {
-  return document.querySelectorAll(selector);
+  var target = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+  return target.querySelectorAll(selector);
 }
 },{}],"src/js/nav.js":[function(require,module,exports) {
 "use strict";
@@ -188,27 +190,21 @@ function navigation() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.bookmark = bookmark;
+exports.initBookmarkToggle = initBookmarkToggle;
 
 var _util = require("./util");
 
-function bookmark() {
-  var cardBookmark1 = (0, _util.get)('.card__bookmark--1');
-  var cardBookmark2 = (0, _util.get)('.card__bookmark--2');
-  var cardBookmark3 = (0, _util.get)('.card__bookmark--3');
-  var cardBookmark4 = (0, _util.get)('.card__bookmark--4');
-  cardBookmark1.addEventListener('click', function () {
-    cardBookmark1.classList.toggle('card__bookmark--active');
+function initBookmarkToggle() {
+  var cardBookmark = (0, _util.getAll)('.card__bookmark');
+  cardBookmark.forEach(function (bookmark) {
+    bookmark.addEventListener('click', bookmarkToggle(bookmark, 'card__bookmark--active'));
   });
-  cardBookmark2.addEventListener('click', function () {
-    cardBookmark2.classList.toggle('card__bookmark--active');
-  });
-  cardBookmark3.addEventListener('click', function () {
-    cardBookmark3.classList.toggle('card__bookmark--active');
-  });
-  cardBookmark4.addEventListener('click', function () {
-    cardBookmark4.classList.toggle('card__bookmark--active');
-  });
+
+  function bookmarkToggle(bookmark, classname) {
+    return function () {
+      bookmark.classList.toggle(classname);
+    };
+  }
 }
 },{"./util":"src/js/util.js"}],"src/js/answer.js":[function(require,module,exports) {
 "use strict";
@@ -274,7 +270,7 @@ var _bookmark = require("./bookmark");
 var _answer = require("./answer");
 
 (0, _nav.navigation)();
-(0, _bookmark.bookmark)();
+(0, _bookmark.initBookmarkToggle)();
 (0, _answer.answer)();
 },{"./nav":"src/js/nav.js","./bookmark":"src/js/bookmark.js","./answer":"src/js/answer.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];

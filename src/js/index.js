@@ -1,6 +1,6 @@
 import { navigation } from './nav'
-import { bookmark } from './bookmark'
+import { initBookmarkToggle } from './bookmark'
 import { answer } from './answer'
 navigation()
-bookmark()
+initBookmarkToggle()
 answer()
