@@ -1,4 +1,4 @@
-export default function navigation() {
+export function navigation() {
   const index = document.querySelector('.index')
   const bookmarks = document.querySelector('.bookmarks')
   const create = document.querySelector('.create')

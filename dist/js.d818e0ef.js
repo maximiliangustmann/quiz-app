@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = navigation;
+exports.navigation = navigation;
 
 function navigation() {
   var index = document.querySelector('.index');
@@ -164,15 +164,66 @@ function navigation() {
     headline.textContent = 'Profile';
   });
 }
+},{}],"src/js/bookmark.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.bookmark = bookmark;
+
+function bookmark() {
+  var cardBookmark = document.querySelector('.card__bookmark');
+  var cardBookmark1 = document.querySelector('.card__bookmark--1');
+  var cardBookmark2 = document.querySelector('.card__bookmark--2');
+  var cardBookmark3 = document.querySelector('.card__bookmark--3');
+  var cardBookmark4 = document.querySelector('.card__bookmark--4');
+  cardBookmark1.addEventListener('click', function () {
+    cardBookmark1.classList.toggle('card__bookmark--active');
+  });
+  cardBookmark2.addEventListener('click', function () {
+    cardBookmark2.classList.toggle('card__bookmark--active');
+  });
+  cardBookmark3.addEventListener('click', function () {
+    cardBookmark3.classList.toggle('card__bookmark--active');
+  });
+  cardBookmark4.addEventListener('click', function () {
+    cardBookmark4.classList.toggle('card__bookmark--active');
+  });
+}
+},{}],"src/js/answer.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.answer = answer;
+
+function answer() {
+  var cardButton = document.querySelector('.card__button');
+  var cardButton1 = document.querySelector('.card__button--1');
+  var cardAnswer1 = document.querySelector('.card__answer--1');
+  cardButton1.addEventListener('click', function () {
+    cardAnswer1.classList.toggle('hide');
+
+    if (cardButton1.textContent === 'Show answer') {
+      cardButton1.textContent = 'Hide Answer';
+    } else cardButton1.textContent = 'Show answer';
+  });
+}
 },{}],"src/js/index.js":[function(require,module,exports) {
 "use strict";
 
-var _nav = _interopRequireDefault(require("./nav"));
+var _nav = require("./nav");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _bookmark = require("./bookmark");
 
-(0, _nav.default)();
-},{"./nav":"src/js/nav.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var _answer = require("./answer");
+
+(0, _nav.navigation)();
+(0, _bookmark.bookmark)();
+(0, _answer.answer)();
+},{"./nav":"src/js/nav.js","./bookmark":"src/js/bookmark.js","./answer":"src/js/answer.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
