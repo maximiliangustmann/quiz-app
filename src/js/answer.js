@@ -1,7 +1,7 @@
+import { get } from './util'
 export function answer() {
-  const cardButton = document.querySelector('.card__button')
-  const cardButton1 = document.querySelector('.card__button--1')
-  const cardAnswer1 = document.querySelector('.card__answer--1')
+  const cardButton1 = get('.card__button--1')
+  const cardAnswer1 = get('.card__answer--1')
 
   cardButton1.addEventListener('click', () => {
     cardAnswer1.classList.toggle('hide')

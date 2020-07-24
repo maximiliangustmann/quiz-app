@@ -1,14 +1,15 @@
+import { get } from './util'
 export function navigation() {
-  const index = document.querySelector('.index')
-  const bookmarks = document.querySelector('.bookmarks')
-  const create = document.querySelector('.create')
-  const profile = document.querySelector('.profile')
+  const index = get('.index')
+  const bookmarks = get('.bookmarks')
+  const create = get('.create')
+  const profile = get('.profile')
 
-  const buttonIndex = document.querySelector('.button__index')
-  const buttonBookmarks = document.querySelector('.button__bookmarks')
-  const buttonCreate = document.querySelector('.button__create')
-  const buttonProfile = document.querySelector('.button__profile')
-  const headline = document.querySelector('h1')
+  const buttonIndex = get('.button__index')
+  const buttonBookmarks = get('.button__bookmarks')
+  const buttonCreate = get('.button__create')
+  const buttonProfile = get('.button__profile')
+  const headline = get('h1')
 
   buttonIndex.addEventListener('click', () => {
     bookmarks.classList.add('hide')

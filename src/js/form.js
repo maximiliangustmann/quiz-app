@@ -1,2 +1,5 @@
+const { get } = require('./util')
+
 //Submit Form
-const buttonSubmit = document.querySelector('.button__submit')
+import { get } from './util'
+const buttonSubmit = get('.button__submit')

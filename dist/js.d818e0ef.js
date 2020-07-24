@@ -117,7 +117,23 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/js/nav.js":[function(require,module,exports) {
+})({"src/js/util.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.get = get;
+exports.getAll = getAll;
+
+function get(selector) {
+  return document.querySelector(selector);
+}
+
+function getAll(selector) {
+  return document.querySelectorAll(selector);
+}
+},{}],"src/js/nav.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -125,16 +141,18 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.navigation = navigation;
 
+var _util = require("./util");
+
 function navigation() {
-  var index = document.querySelector('.index');
-  var bookmarks = document.querySelector('.bookmarks');
-  var create = document.querySelector('.create');
-  var profile = document.querySelector('.profile');
-  var buttonIndex = document.querySelector('.button__index');
-  var buttonBookmarks = document.querySelector('.button__bookmarks');
-  var buttonCreate = document.querySelector('.button__create');
-  var buttonProfile = document.querySelector('.button__profile');
-  var headline = document.querySelector('h1');
+  var index = (0, _util.get)('.index');
+  var bookmarks = (0, _util.get)('.bookmarks');
+  var create = (0, _util.get)('.create');
+  var profile = (0, _util.get)('.profile');
+  var buttonIndex = (0, _util.get)('.button__index');
+  var buttonBookmarks = (0, _util.get)('.button__bookmarks');
+  var buttonCreate = (0, _util.get)('.button__create');
+  var buttonProfile = (0, _util.get)('.button__profile');
+  var headline = (0, _util.get)('h1');
   buttonIndex.addEventListener('click', function () {
     bookmarks.classList.add('hide');
     create.classList.add('hide');
@@ -164,7 +182,7 @@ function navigation() {
     headline.textContent = 'Profile';
   });
 }
-},{}],"src/js/bookmark.js":[function(require,module,exports) {
+},{"./util":"src/js/util.js"}],"src/js/bookmark.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -172,12 +190,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.bookmark = bookmark;
 
+var _util = require("./util");
+
 function bookmark() {
-  var cardBookmark = document.querySelector('.card__bookmark');
-  var cardBookmark1 = document.querySelector('.card__bookmark--1');
-  var cardBookmark2 = document.querySelector('.card__bookmark--2');
-  var cardBookmark3 = document.querySelector('.card__bookmark--3');
-  var cardBookmark4 = document.querySelector('.card__bookmark--4');
+  var cardBookmark1 = (0, _util.get)('.card__bookmark--1');
+  var cardBookmark2 = (0, _util.get)('.card__bookmark--2');
+  var cardBookmark3 = (0, _util.get)('.card__bookmark--3');
+  var cardBookmark4 = (0, _util.get)('.card__bookmark--4');
   cardBookmark1.addEventListener('click', function () {
     cardBookmark1.classList.toggle('card__bookmark--active');
   });
@@ -191,7 +210,7 @@ function bookmark() {
     cardBookmark4.classList.toggle('card__bookmark--active');
   });
 }
-},{}],"src/js/answer.js":[function(require,module,exports) {
+},{"./util":"src/js/util.js"}],"src/js/answer.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -199,10 +218,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.answer = answer;
 
+var _util = require("./util");
+
 function answer() {
-  var cardButton = document.querySelector('.card__button');
-  var cardButton1 = document.querySelector('.card__button--1');
-  var cardAnswer1 = document.querySelector('.card__answer--1');
+  var cardButton1 = (0, _util.get)('.card__button--1');
+  var cardAnswer1 = (0, _util.get)('.card__answer--1');
   cardButton1.addEventListener('click', function () {
     cardAnswer1.classList.toggle('hide');
 
@@ -211,7 +231,7 @@ function answer() {
     } else cardButton1.textContent = 'Show answer';
   });
 }
-},{}],"src/js/index.js":[function(require,module,exports) {
+},{"./util":"src/js/util.js"}],"src/js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _nav = require("./nav");
