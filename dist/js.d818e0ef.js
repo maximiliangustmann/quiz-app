@@ -221,8 +221,8 @@ exports.answer = answer;
 var _util = require("./util");
 
 function answer() {
-  var cardButton1 = (0, _util.get)('.card__button--1');
-  var cardAnswer1 = (0, _util.get)('.card__answer--1');
+  var cardButton1 = (0, _util.get)('.card__button');
+  var cardAnswer1 = (0, _util.get)('.card__answer');
   cardButton1.addEventListener('click', function () {
     cardAnswer1.classList.toggle('hide');
 
@@ -230,7 +230,40 @@ function answer() {
       cardButton1.textContent = 'Hide Answer';
     } else cardButton1.textContent = 'Show answer';
   });
+} //Martins Lösung
+
+/* import { get, getAll } from './utility'
+
+export function answer() {
+  const cards = getAll('.card')
+
+  cards.forEach(toggleAnswer)
+
+  function toggleAnswer(card) {
+    const buttonAnswer = card.querySelector('[class*="card__button--"]')
+    const answer = card.querySelector('.card__answer')
+    buttonAnswer.addEventListener(
+      'click',
+      showAnswerForCard(buttonAnswer, answer)
+    )
+  }
+
+  function showAnswerForCard(button, answerCard) {
+    return () => {
+      if (button.classList.contains('card__button--answer')) {
+        answerCard.classList.remove('hide')
+        button.classList.remove('card__button--answer')
+        button.classList.add('card__button--hide-answer')
+      } else {
+        answerCard.classList.add('hide')
+        button.classList.add('card__button--show-answer')
+        button.classList.remove('card__button--hide-answer')
+      }
+    }
+  }
 }
+
+*/
 },{"./util":"src/js/util.js"}],"src/js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -271,7 +304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65395" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50622" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
