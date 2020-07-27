@@ -19,6 +19,8 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.10.5",
+    "eslint": "^7.5.0",
+    "eslint-plugin-react": "^7.20.4",
     "parcel-bundler": "^1.12.4",
     "sass": "^1.26.10"
   }
