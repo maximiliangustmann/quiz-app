@@ -226,40 +226,76 @@ function answer() {
       cardButton1.textContent = 'Hide Answer';
     } else cardButton1.textContent = 'Show answer';
   });
-} //Martins Lösung
+}
+},{"./util":"src/js/util.js"}],"src/js/card.js":[function(require,module,exports) {
+"use strict";
 
-/* import { get, getAll } from './utility'
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.card = card;
 
-export function answer() {
-  const cards = getAll('.card')
+var _util = require("./util");
 
-  cards.forEach(toggleAnswer)
+function card() {
+  var placeholder = (0, _util.get)('[data-js=placeholder]');
+  var card = [{
+    type: 'h2',
+    className: 'card__headline',
+    text: 'Question'
+  }, {
+    type: 'paragraph',
+    className: 'card__text card__text--question',
+    text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores, nesciunt adipisci? Quia voluptate voluptas harum eius vel, error qui natus ipsam. Natus nulla harum in quas sit dicta sequi facilis!'
+  }, {
+    type: 'button',
+    className: 'card_button card__button--answer',
+    text: 'Show Answer'
+  }, {
+    type: 'button',
+    className: 'card_button card__button--hide-answer',
+    text: 'Hide Answer'
+  }, {
+    type: 'paragraph',
+    className: 'card__answer hide',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, exercitationem consectetur!'
+  }, {
+    type: 'li',
+    className: 'card__tag',
+    text: 'tag 1'
+  }, {
+    type: 'li',
+    className: 'card__tag',
+    text: 'tag 2'
+  }];
+  card.forEach(function (_ref) {
+    var type = _ref.type,
+        className = _ref.className,
+        text = _ref.text;
+    var el = createElement({
+      type: type,
+      className: className,
+      target: placeholder
+    });
+    el.textContent = text;
+  });
+  createElement();
 
-  function toggleAnswer(card) {
-    const buttonAnswer = card.querySelector('[class*="card__button--"]')
-    const answer = card.querySelector('.card__answer')
-    buttonAnswer.addEventListener(
-      'click',
-      showAnswerForCard(buttonAnswer, answer)
-    )
-  }
+  function createElement() {
+    var _ref2 = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+        _ref2$type = _ref2.type,
+        type = _ref2$type === void 0 ? 'div' : _ref2$type,
+        _ref2$className = _ref2.className,
+        className = _ref2$className === void 0 ? ' ' : _ref2$className,
+        _ref2$target = _ref2.target,
+        target = _ref2$target === void 0 ? document.body : _ref2$target;
 
-  function showAnswerForCard(button, answerCard) {
-    return () => {
-      if (button.classList.contains('card__button--answer')) {
-        answerCard.classList.remove('hide')
-        button.classList.remove('card__button--answer')
-        button.classList.add('card__button--hide-answer')
-      } else {
-        answerCard.classList.add('hide')
-        button.classList.add('card__button--show-answer')
-        button.classList.remove('card__button--hide-answer')
-      }
-    }
+    var el = document.createElement(type);
+    el.className = className;
+    target.appendChild(el);
+    return el;
   }
 }
-
-*/
 },{"./util":"src/js/util.js"}],"src/js/index.js":[function(require,module,exports) {
 "use strict";
 
@@ -269,10 +305,13 @@ var _bookmark = require("./bookmark");
 
 var _answer = require("./answer");
 
+var _card = require("./card");
+
 (0, _nav.navigation)();
 (0, _bookmark.initBookmarkToggle)();
 (0, _answer.answer)();
-},{"./nav":"src/js/nav.js","./bookmark":"src/js/bookmark.js","./answer":"src/js/answer.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+(0, _card.card)();
+},{"./nav":"src/js/nav.js","./bookmark":"src/js/bookmark.js","./answer":"src/js/answer.js","./card":"src/js/card.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -300,7 +339,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50622" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52106" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
